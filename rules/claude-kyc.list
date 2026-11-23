@@ -1,0 +1,10 @@
+# Claude KYC domains (optional, recommended if you use Anthropic identity checks)
+# Source: https://ip.net.coffee/claude/site.html
+# Page Last-Modified: Fri, 13 Nov 2026 07:26:54 GMT
+# Format: Shadowrocket / Surge RULE-SET (no policy; assign policy in the RULE-SET line)
+# Do not put proxy credentials or subscription URLs in this repository.
+# These appear in the page tables but are often omitted from the copyable rule block.
+
+DOMAIN,maps.googleapis.com
+DOMAIN-SUFFIX,withpersona.com
+DOMAIN-SUFFIX,frompersona.com

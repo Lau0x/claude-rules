@@ -1,0 +1,16 @@
+{
+  "url": "https://ip.net.coffee/claude/site.html",
+  "final_url": "https://ip.net.coffee/claude/site.html",
+  "status": 200,
+  "last_modified": "Fri, 13 Nov 2026 07:26:54 GMT",
+  "date_header": "Mon, 23 Nov 2026 01:52:40 GMT",
+  "etag": null,
+  "cache_control": "public, max-age=900",
+  "sha256": "887c18f4eaf13f80bd47b6bd8efa3460efba82c225a97966aa867ced4fa5ba0c",
+  "bytes": 33823,
+  "fetched_at_cst": "2026-11-23 09:52:40 CST",
+  "parsed_rules_sha256": "bccd5e5b428c87ca2c6f701a92d2f89287456ebea22ed465763ce7156b10ce47",
+  "classical_count": 22,
+  "main_count": 23,
+  "kyc_count": 3
+}

@@ -1,0 +1,20 @@
+# Optional NTP domains (Shadowrocket has no geosite:category-ntp)
+# Source: https://ip.net.coffee/claude/site.html
+# Page Last-Modified: Fri, 13 Nov 2026 07:26:54 GMT
+# Format: Shadowrocket / Surge RULE-SET (no policy; assign policy in the RULE-SET line)
+# Do not put proxy credentials or subscription URLs in this repository.
+# The page recommends geosite:category-ntp; this is a conservative stand-in, not a full geosite dump.
+# Place this RULE-SET BEFORE any DOMAIN-SUFFIX,apple.com,DIRECT rule.
+# NTP itself returns UTC, not a timezone. Also set the device timezone to match the proxy exit.
+# This list is maintained in the script, not parsed from the page (the page only names geosite:category-ntp).
+
+DOMAIN-SUFFIX,pool.ntp.org
+DOMAIN-SUFFIX,ntp.org
+DOMAIN,time.apple.com
+DOMAIN,time.asia.apple.com
+DOMAIN,time.euro.apple.com
+DOMAIN,time.windows.com
+DOMAIN,time.cloudflare.com
+DOMAIN,time.google.com
+DOMAIN,time.nist.gov
+DOMAIN,ntp.ubuntu.com
