@@ -17,7 +17,31 @@ sitemap 中该页的 `<lastmod>` 也是 `2026-11-13`。正文里没有单独的�
 | `rules/claude-ntp.list` | 可选 NTP 兜底。页面写的是 `geosite:category-ntp`，Shadowrocket 不支持 geosite，这是一份保守替代，不是完整 geosite 导出 |
 | `rules/claude.yaml` | Clash / Mihomo `payload` 格式（主规则 + KYC） |
 | `update.py` | 抓取页面、解析、生成规则；有变化时打印 diff。**不会自动 commit / push** |
+| `shadowrocket.conf` | 完整 Shadowrocket 配置（RULE-SET 版，可用 URL 导入） |
 | `snapshots/source-meta.json` | 最近一次抓取的 `Last-Modified`、HTML 哈希、解析后规则哈希 |
+
+
+## 完整配置（URL 导入）
+
+完整 Shadowrocket 配置（RULE-SET 版，不含节点/密码/订阅）可以从下面的链接导入：
+
+```
+https://cdn.jsdelivr.net/gh/Lau0x/claude-rules@main/shadowrocket.conf
+```
+
+备用（GitHub raw，国内可能直连失败）：
+
+```
+https://raw.githubusercontent.com/Lau0x/claude-rules/main/shadowrocket.conf
+```
+
+在 Shadowrocket 中：打开 **配置** 页 > 右上角 **➕** > 粘贴配置链接 > **下载** > 点刚下载的配置 > **使用配置**（或 **编译配置**）。依据：[LOWERTOP/Shadowrocket 使用手册](https://github.com/LOWERTOP/Shadowrocket)「配置文件」一节（该手册基于 Shadowrocket 官方群组关键词列表，非厂商官网文档）。也可以用 URL Scheme：`shadowrocket://config/add/{url}`（同一手册的 URL-Schemes 一节）。
+
+配置的 `[General]` 里写了 `update-url`，指向上面的 jsDelivr 链接。远程导入后，点该配置会出现 **更新配置**；也可在设置里打开配置自动更新（间隔 1–7 天），并在 iOS **系统设置 > 通用 > 后台 App 刷新** 中允许 Shadowrocket。注意：更新配置会用远程文件完整覆盖本地对该配置的修改。若只想刷新 Claude 规则集、不想覆盖本地改动，用 **使用配置 / 编译配置**，或按手册注释掉 `update-url`。
+
+`AI` 策略组引用的是本机已有节点名，导入后需确保该节点仍在客户端里。
+
+jsDelivr 对 `@main` 分支链接的缓存约为 **12 小时**（[jsDelivr 官方文档 Caching](https://github.com/jsdelivr/jsdelivr#caching)）。配置或规则更新后，jsDelivr 可能最多延迟 12 小时才跟上；`purge.jsdelivr.net` 对分支 URL 并不保证有效。若要立刻拿到新版本，用 GitHub raw 链接，或在 12 小时后再走 jsDelivr。
 
 ## Shadowrocket 用法
 
